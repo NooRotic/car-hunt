@@ -1,0 +1,7 @@
+.firecrawl/
+*.pdf
+*.jpg
+*.jpeg
+*.png
+_viewer_data.json
+node_modules/
