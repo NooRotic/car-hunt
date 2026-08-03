@@ -130,7 +130,126 @@ tr.avoid .veh{color:#8a5a55}
 .rg-Bridge{color:#1d4ed8;border-color:#b9c9f0;background:#f0f4fd}
 .rg-DE{color:#6b5410;border-color:#e0c96b;background:#fdf6dd}
 .rg-Turnpike,.rg-NYmetro,.rg-MD{color:#8c2f2a;border-color:#e0b8b3;background:#fbeeed}
-</style></head><body>
+
+/* ===== theme toggle ===== */
+.themebtn{position:fixed;top:12px;right:14px;z-index:60;width:34px;height:34px;border-radius:50%;
+  border:1px solid #c8ccd2;background:#fff;color:#1c1f24;font-size:15px;line-height:1;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 1px 5px rgba(0,0,0,.14)}
+.themebtn:hover{background:#eef0f3}
+
+/* ===== hover image zoom (desktop pointers only) ===== */
+#imgzoom{position:fixed;z-index:100;pointer-events:none;display:none;
+  border:2px solid #fff;border-radius:8px;box-shadow:0 10px 34px rgba(0,0,0,.4);background:#eceef1;overflow:hidden}
+#imgzoom img{display:block;width:420px;height:auto;max-height:320px;object-fit:cover}
+@media (hover:none),(pointer:coarse){#imgzoom{display:none!important}}
+
+/* ===== DARK THEME ===== */
+html[data-theme="dark"] body{background:#12151a;color:#dfe4ea}
+html[data-theme="dark"] .sub{color:#8b95a3}
+html[data-theme="dark"] .sub b{color:#cdd5df}
+html[data-theme="dark"] .bar{background:#1a1f27;border-color:#2b3340}
+html[data-theme="dark"] .f label{color:#8b95a3}
+html[data-theme="dark"] .f input[type=number],
+html[data-theme="dark"] .f select{background:#12151a;border-color:#39424f;color:#dfe4ea}
+html[data-theme="dark"] .chip{background:#232b37;border-color:#39424f;color:#c3cad6}
+html[data-theme="dark"] .chip.on{background:#c9a227;border-color:#c9a227;color:#12151a}
+html[data-theme="dark"] .mini{background:#232b37;border-color:#39424f;color:#c3cad6}
+html[data-theme="dark"] .mini:hover{background:#2b3340}
+html[data-theme="dark"] .count{color:#8b95a3}html[data-theme="dark"] .count b{color:#f0f2f5}
+html[data-theme="dark"] table{background:#1a1f27;border-color:#2b3340}
+html[data-theme="dark"] th{background:#232b37;color:#9aa4b2;border-color:#2b3340}
+html[data-theme="dark"] th:hover{background:#2b3340}
+html[data-theme="dark"] td{border-color:#232b37}
+html[data-theme="dark"] tr:hover td{background:#20262f}
+html[data-theme="dark"] .price,html[data-theme="dark"] .veh{color:#eef1f4}
+html[data-theme="dark"] .trim{color:#8b95a3}
+html[data-theme="dark"] tr.avoid td{background:#241a1a}
+html[data-theme="dark"] tr.avoid:hover td{background:#2b1e1e}
+html[data-theme="dark"] tr.avoid .veh{color:#c99a94}
+html[data-theme="dark"] a{color:#e8a598}
+html[data-theme="dark"] .slwrap{background:#1c1a12;border-color:#6b5410}
+html[data-theme="dark"] .slhead{background:#24210f}
+html[data-theme="dark"] .slhead h2{color:#f0d97a}
+html[data-theme="dark"] .slhead .cnt,html[data-theme="dark"] .slhead .tog{color:#c9a227}
+html[data-theme="dark"] .sltitle{color:#f0f2f5}
+html[data-theme="dark"] .slwhy{color:#c3cad6}
+html[data-theme="dark"] .slrow{border-color:#3a3316}
+html[data-theme="dark"] .slp{color:#f0f2f5}html[data-theme="dark"] .slm{color:#8b95a3}
+html[data-theme="dark"] .slvin{color:#8b95a3}
+html[data-theme="dark"] .slstat{background:#12151a;border-color:#4a4222;color:#dfe4ea}
+html[data-theme="dark"] .slstat.s2{background:#12212f;border-color:#2f5a86}
+html[data-theme="dark"] .slstat.s3{background:#122318;border-color:#2f6a45}
+html[data-theme="dark"] .slstat.s9{background:#241717;border-color:#6a3a34}
+html[data-theme="dark"] .nothumb{background:#232b37;color:#5c6675}
+html[data-theme="dark"] .note{color:#8b95a3}html[data-theme="dark"] .note b{color:#e8a598}
+html[data-theme="dark"] .rowrap{background:#1c1414;border-color:#6a3a34}
+html[data-theme="dark"] .rot{color:#eef1f4}
+html[data-theme="dark"] .row2{color:#c3cad6}
+html[data-theme="dark"] .rod{color:#b08a84}
+html[data-theme="dark"] .hlwrap{background:#161a20;border-color:#2b3340}
+html[data-theme="dark"] .spec .v{color:#eef1f4}
+html[data-theme="dark"] .spec .v small{color:#8b95a3}
+html[data-theme="dark"] .spec div{border-color:#2b3340}
+html[data-theme="dark"] .hltbl{background:#1a1f27;border-color:#2b3340}
+html[data-theme="dark"] .hltbl th{background:#232b37;color:#9aa4b2}
+html[data-theme="dark"] .hltbl td{border-color:#232b37;color:#dfe4ea}
+html[data-theme="dark"] .hltbl tr.loc td{background:#13251c}
+html[data-theme="dark"] .hltbl tr.new td{background:#241f10}
+html[data-theme="dark"] .hlnote{color:#a7b0bd}
+html[data-theme="dark"] .rg-PA{color:#c3cad6;background:#232b37;border-color:#39424f}
+html[data-theme="dark"] .themebtn{background:#232b37;border-color:#39424f;color:#f0d97a}
+html[data-theme="dark"] .themebtn:hover{background:#2b3340}
+
+/* ===== MOBILE ===== */
+@media (max-width:640px){
+  body{padding:12px 12px 48px;font-size:12.5px}
+  h1{font-size:15px}
+  .themebtn{top:8px;right:10px;width:30px;height:30px;font-size:14px}
+  .bar{gap:10px;padding:10px}
+  .f{flex:1 1 132px}
+  .f input[type=number],.f select{width:100%}
+  /* main table scrolls sideways instead of squashing 13 columns */
+  table{display:block;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+  /* shortlist cards stack to one column */
+  .slrow{grid-template-columns:1fr !important;gap:6px}
+  .slimg{width:100% !important;height:200px !important}
+  .slrow .nothumb{width:100% !important;height:120px !important}
+  .slnum{text-align:left;display:flex;gap:14px;align-items:baseline}
+  /* ruled-out + comps stack */
+  .rorow{grid-template-columns:1fr;gap:5px}
+  .rocost{text-align:left}
+  .cmpr .row{grid-template-columns:104px 1fr 72px;gap:8px}
+}
+/* ===== GRID VIEW ===== */
+#grid{display:none;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:14px}
+.gcard{background:#fff;border:1px solid #dcdfe4;border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.gcard.avoid{background:#fdf7f6;border-color:#e6c9c4}
+.gimgwrap{position:relative;aspect-ratio:16/10;background:#eceef1}
+.gimg{width:100%;height:100%;object-fit:cover;display:block;border-radius:0}
+.gimgwrap .nothumb{width:100%;height:100%;border-radius:0}
+.gstar{position:absolute;top:6px;right:7px;font-size:18px;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.gstar.on{color:#e0a800}
+.gbody{padding:9px 11px 11px;display:flex;flex-direction:column;gap:3px}
+.gprice{font-size:16px;font-weight:800;color:#10131a}
+.gveh{font-size:12.5px;font-weight:700;color:#1c1f24}
+.gmeta{font-size:11px;color:#4b5563}
+.gmeta2{font-size:10px;color:#8a919c;margin-top:1px}
+.glink{margin-top:5px;font-size:11.5px}
+.gcard .avchip{margin-top:1px}
+.vw.on{background:#2b3340;color:#fff;border-color:#2b3340}
+html[data-theme="dark"] .gcard{background:#1a1f27;border-color:#2b3340}
+html[data-theme="dark"] .gcard.avoid{background:#241a1a;border-color:#3a2320}
+html[data-theme="dark"] .gprice,html[data-theme="dark"] .gveh{color:#eef1f4}
+html[data-theme="dark"] .gmeta{color:#9aa4b2}
+html[data-theme="dark"] .gimgwrap,html[data-theme="dark"] .gimgwrap .nothumb{background:#232b37}
+html[data-theme="dark"] .vw.on{background:#c9a227;color:#12151a;border-color:#c9a227}
+@media (max-width:640px){#grid{grid-template-columns:1fr 1fr;gap:9px}}
+</style>
+<script>(function(){try{var s=localStorage.getItem('cartheme');
+  var d=s||((window.matchMedia&&matchMedia('(prefers-color-scheme:dark)').matches)?'dark':'light');
+  document.documentElement.setAttribute('data-theme',d);}catch(e){}})();</script>
+</head><body>
+<button id="themeToggle" class="themebtn" type="button" aria-label="Toggle light or dark theme" title="Toggle light / dark">&#127769;</button>
 <h1>Replacement search &mdash; PA, DE &amp; near-NJ, &le;$20K</h1>
 <div class="sub">Cars.com + CarMax &middot; base pull 2026-07-31, <b>refreshed 2026-08-01</b> &middot;
   the old &ldquo;PA/DE only&rdquo; rule is relaxed, not silently broken. Rows flagged
@@ -154,16 +273,18 @@ tr.avoid .veh{color:#8a5a55}
   <div class="f"><label>Models <span class="mini" id="mall">all</span> <span class="mini" id="mnone">none</span></label><div class="chips" id="chips"></div></div>
   <div class="f"><label>&nbsp;</label><div class="chips">
      <span class="chip" id="cawd">AWD only</span><span class="chip" id="ccmx">CarMax only</span><span class="chip" id="cfav">&#9733; Saved</span><span class="chip on" id="cflag">hide &#9888; flagged</span></div></div>
+  <div class="f"><label>View</label><div class="chips"><span class="chip vw" data-v="list">List</span><span class="chip vw" data-v="grid">Grid</span></div></div>
   <div class="count"><b id="n">0</b> shown</div>
 </div>
 
-<table><thead><tr>
+<table id="tbl"><thead><tr>
   <th data-k="fav" style="width:26px">&#9733;</th><th style="width:70px"></th>
   <th data-k="p">Price</th><th data-k="mi">Miles</th><th data-k="y">Yr</th>
   <th data-k="veh">Vehicle</th><th data-k="dw">Drv</th>
   <th data-k="cpm">$/1k left</th><th data-k="t">Drive</th><th data-k="rg">Region</th>
   <th data-k="src">Src</th><th data-k="d">Seller</th><th>Link</th>
 </tr></thead><tbody id="tb"></tbody></table>
+<div id="grid"></div>
 
 <div class="note">
 <b>$/1k left</b> = price &divide; (250,000 &minus; odometer) &divide; 1,000 &mdash; what each remaining thousand miles costs,
@@ -185,7 +306,7 @@ const RX=[{"t":"2016 Dodge Journey R/T","detail":"102,923 mi · $11,990 + $1,990
 <script>
 const S = new Set(JSON.parse(localStorage.getItem('carfav')||'[]'));
 const MODELS = [...new Set(D.map(r=>r.md))].sort();
-let off = new Set(), sortK='cpm', sortA=true, awd=false, favOnly=false, cmxOnly=false, hideFlag=true;
+let off = new Set(), sortK='cpm', sortA=true, awd=false, favOnly=false, cmxOnly=false, hideFlag=true, view=localStorage.getItem('carview')||'list';
 
 const chips = document.getElementById('chips');
 MODELS.forEach(m=>{ const c=document.createElement('span'); c.className='chip on'; c.textContent=m;
@@ -231,6 +352,21 @@ function render(){
     '<td>'+(r.src==="CarMax"?'<span class="cmx">CarMax</span>':'<span style="color:#b9bec7;font-size:10.5px">cars.com</span>')+'</td>'+
     '<td style="color:#6b7280">'+r.d+'</td>'+
     '<td><a href="'+r.u+'" target="_blank" rel="noopener">view &rarr;</a></td></tr>').join('');
+  document.getElementById('grid').innerHTML = rows.map(r=>
+    '<div class="gcard'+(r.av?' avoid':'')+'">'+
+      '<div class="gimgwrap">'+(r.img?'<a href="'+r.u+'" target="_blank" rel="noopener"><img class="thumb gimg" loading="lazy" src="'+r.img+'" alt=""></a>':'<div class="nothumb gimg">no photo</div>')+
+        '<span class="star gstar '+(S.has(r.u)?'on':'')+'" data-u="'+r.u+'">&#9733;</span></div>'+
+      '<div class="gbody">'+
+        '<div class="gprice">$'+r.p.toLocaleString()+'</div>'+
+        '<div class="gveh">'+r.y+' '+r.mk+' '+r.md+' <span class="trim">'+r.tr+'</span></div>'+
+        (r.av?'<div class="avchip">&#9888; '+r.av+'</div>':'')+
+        '<div class="gmeta">'+(r.mi?r.mi.toLocaleString()+' mi':'')+(r.dw==='AWD'?' &middot; <span class="awd">AWD</span>':'')+
+          ' &middot; <span class="rg rg-'+(r.rg||'PA').replace(/\s/g,'')+'">'+(r.rg||r.st)+'</span>'+(r.dist?' &middot; '+r.dist+'mi':'')+'</div>'+
+        '<div class="gmeta2">'+(r.src==='CarMax'?'<span class="cmx">CarMax</span>':'cars.com')+' &middot; '+r.d+'</div>'+
+        '<a class="glink" href="'+r.u+'" target="_blank" rel="noopener">view listing &rarr;</a>'+
+      '</div></div>').join('');
+  document.getElementById('tbl').style.display = view==='grid'?'none':'';
+  document.getElementById('grid').style.display = view==='grid'?'grid':'none';
   document.querySelectorAll('.star').forEach(s=>s.onclick=()=>{
     const u=s.dataset.u; S.has(u)?S.delete(u):S.add(u);
     localStorage.setItem('carfav',JSON.stringify([...S])); render(); });
@@ -380,4 +516,32 @@ render();
   <div class="memfoot">Snapped at the base by a confirmed 60&ndash;70 mph microburst, July 11, 2026. It did not go quietly.</div>
 </div>
 
+<div id="imgzoom"><img alt=""></div>
+<script>
+(function(){
+  var root=document.documentElement, tb=document.getElementById('themeToggle');
+  function ic(){ tb.textContent = root.getAttribute('data-theme')==='dark'?'☀️':'🌙'; }
+  if(tb){ ic(); tb.addEventListener('click',function(){
+    var n=root.getAttribute('data-theme')==='dark'?'light':'dark';
+    root.setAttribute('data-theme',n); try{localStorage.setItem('cartheme',n);}catch(e){} ic(); }); }
+  document.querySelectorAll('.vw').forEach(function(c){
+    if(c.dataset.v===view) c.classList.add('on');
+    c.addEventListener('click',function(){
+      view=c.dataset.v; try{localStorage.setItem('carview',view);}catch(e){}
+      document.querySelectorAll('.vw').forEach(function(x){x.classList.toggle('on',x.dataset.v===view);});
+      render(); }); });
+  if(window.matchMedia && matchMedia('(hover:hover) and (pointer:fine)').matches){
+    var z=document.getElementById('imgzoom'), zi=z&&z.querySelector('img');
+    function mv(e){var w=440,h=340,p=18,x=e.clientX+p,y=e.clientY+p;
+      if(x+w>innerWidth)x=e.clientX-w-p; if(y+h>innerHeight)y=Math.max(8,innerHeight-h-8);
+      z.style.left=x+'px'; z.style.top=y+'px';}
+    document.addEventListener('mouseover',function(e){var t=e.target;
+      if(!t.matches||!t.matches('img.thumb,img.slimg')||!t.getAttribute('src'))return;
+      zi.src=t.src; z.style.display='block'; mv(e);});
+    document.addEventListener('mousemove',function(e){ if(z.style.display==='block') mv(e); });
+    document.addEventListener('mouseout',function(e){
+      if(e.target.matches&&e.target.matches('img.thumb,img.slimg')) z.style.display='none'; });
+  }
+})();
+</script>
 </body></html>
